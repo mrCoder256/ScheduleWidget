@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:divider="@drawable/vertical_divider"
+    android:orientation="horizontal"
+    android:showDividers="middle" >
+
+    <TextView
+        android:id="@+id/tvNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:gravity="center_vertical"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="#000" />
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="fill_horizontal"
+        android:layout_weight="1"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/tvLectureName1"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:textColor="#000" />
+
+        <TextView
+            android:id="@+id/tvLectureAndHall1"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:textColor="#000"
+            android:textStyle="italic" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/tvLectureName2"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:textColor="#000" />
+
+        <TextView
+            android:id="@+id/tvLectureAndHall2"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:textColor="#000" />
+    </LinearLayout>
+
+</LinearLayout>
