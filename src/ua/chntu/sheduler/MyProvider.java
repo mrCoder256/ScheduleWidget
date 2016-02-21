@@ -15,6 +15,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.RemoteViews;
+import android.widget.Toast;
 
 public class MyProvider extends AppWidgetProvider {
 
@@ -123,9 +124,21 @@ public class MyProvider extends AppWidgetProvider {
 			if (mAppWidgetId != AppWidgetManager.INVALID_APPWIDGET_ID) {
 				AppWidgetManager appWidgetManager = AppWidgetManager
 						.getInstance(context);
+
+				widgetView.setInt(R.id.btnMenu, "setBackgroundResource", R.drawable.ic_manu_clicked);
+				appWidgetManager.updateAppWidget(mAppWidgetId, widgetView);
+				try {
+					Thread.sleep(100);
+				} catch (InterruptedException e) {
+					e.printStackTrace();
+				}
+				
 				show_buttons = !show_buttons;
 				updateVisibilityOfButtons(context, appWidgetManager,
 						mAppWidgetId, widgetView);
+				
+				widgetView.setInt(R.id.btnMenu, "setBackgroundResource", R.drawable.ic_manu);
+				appWidgetManager.updateAppWidget(mAppWidgetId, widgetView);
 			}
 		} else if (action.equalsIgnoreCase(ACTION_NEXT)) {
 			Log.d(LOG_TAG, "NEXT is clicked");
@@ -140,11 +153,22 @@ public class MyProvider extends AppWidgetProvider {
 			if (mAppWidgetId != AppWidgetManager.INVALID_APPWIDGET_ID) {
 				AppWidgetManager appWidgetManager = AppWidgetManager
 						.getInstance(context);
+
+				widgetView.setInt(R.id.btnNextDay, "setBackgroundResource", R.drawable.ic_forward_clicked);
+				appWidgetManager.updateAppWidget(mAppWidgetId, widgetView);
+				try {
+					Thread.sleep(100);
+				} catch (InterruptedException e) {
+					e.printStackTrace();
+				}
+				
 				Day day = scheduler.getNextDay();
 				widgetView.setTextViewText(R.id.tvTitle, scheduler.getDate(day));
 				Log.d(LOG_TAG, "next day: " + scheduler.getDate(day));
 				setList(widgetView, context, mAppWidgetId, day);
+				appWidgetManager.updateAppWidget(mAppWidgetId, widgetView);
 
+				widgetView.setInt(R.id.btnNextDay, "setBackgroundResource", R.drawable.ic_forward);
 				appWidgetManager.updateAppWidget(mAppWidgetId, widgetView);
 			}
 		} else if (action.equalsIgnoreCase(ACTION_PREVIOUS)) {
@@ -160,11 +184,22 @@ public class MyProvider extends AppWidgetProvider {
 			if (mAppWidgetId != AppWidgetManager.INVALID_APPWIDGET_ID) {
 				AppWidgetManager appWidgetManager = AppWidgetManager
 						.getInstance(context);
+
+				widgetView.setInt(R.id.btnPrevDay, "setBackgroundResource", R.drawable.ic_back_clicked);
+				appWidgetManager.updateAppWidget(mAppWidgetId, widgetView);
+				try {
+					Thread.sleep(100);
+				} catch (InterruptedException e) {
+					e.printStackTrace();
+				}
+				
 				Day day = scheduler.getPrevDay();
 				widgetView.setTextViewText(R.id.tvTitle, scheduler.getDate(day));
 				Log.d(LOG_TAG, "prev day: " + scheduler.getDate(day));
 				setList(widgetView, context, mAppWidgetId, day);
+				appWidgetManager.updateAppWidget(mAppWidgetId, widgetView);
 
+				widgetView.setInt(R.id.btnPrevDay, "setBackgroundResource", R.drawable.ic_back);
 				appWidgetManager.updateAppWidget(mAppWidgetId, widgetView);
 			}
 		} else if (action.equalsIgnoreCase(ACTION_CALENDAR)) {
@@ -209,10 +244,21 @@ public class MyProvider extends AppWidgetProvider {
 			if (mAppWidgetId != AppWidgetManager.INVALID_APPWIDGET_ID) {
 				AppWidgetManager appWidgetManager = AppWidgetManager
 						.getInstance(context);
+
+				widgetView.setInt(R.id.btnCurrDay, "setBackgroundResource", R.drawable.ic_home_clicked);
+				appWidgetManager.updateAppWidget(mAppWidgetId, widgetView);
+				try {
+					Thread.sleep(100);
+				} catch (InterruptedException e) {
+					e.printStackTrace();
+				}
+				
 				Day day = scheduler.getToday();
 				widgetView.setTextViewText(R.id.tvTitle, scheduler.getDate(day));
 				setList(widgetView, context, mAppWidgetId, day);
+				appWidgetManager.updateAppWidget(mAppWidgetId, widgetView);
 
+				widgetView.setInt(R.id.btnCurrDay, "setBackgroundResource", R.drawable.ic_home);
 				appWidgetManager.updateAppWidget(mAppWidgetId, widgetView);
 			}
 		}
