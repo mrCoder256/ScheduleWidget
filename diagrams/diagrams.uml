@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="20110701" xmlns:xmi="http://www.omg.org/spec/XMI/20110701" xmlns:uml="http://www.eclipse.org/uml2/4.0.0/UML" xmi:id="_oWeO0KCCEea0vPC0H05dSg" name="model">
+  <packagedElement xmi:type="uml:Model" xmi:id="_pV0L8KCCEea0vPC0H05dSg" name="UI">
+    <ownedComment xmi:type="uml:Comment" xmi:id="_ArptIKCHEea0vPC0H05dSg">
+      <body>This layer implements the MVP pattern.</body>
+    </ownedComment>
+    <packagedElement xmi:type="uml:Model" xmi:id="_S5unIKCHEea0vPC0H05dSg" name="View">
+      <ownedComment xmi:type="uml:Comment" xmi:id="_XiW_IKCHEea0vPC0H05dSg">
+        <body>Xml layouts.</body>
+      </ownedComment>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Package" xmi:id="_eMZ8oKCEEea0vPC0H05dSg" clientDependency="_BXuSgKCTEea0vPC0H05dSg _DEEfkKCTEea0vPC0H05dSg" name="ua.chntu.schedule.ui.presenter">
+      <ownedComment xmi:type="uml:Comment" xmi:id="_Rjk-cKCFEea0vPC0H05dSg">
+        <body>A widget provider and related classes.</body>
+      </ownedComment>
+      <packagedElement xmi:type="uml:Dependency" xmi:id="_BXuSgKCTEea0vPC0H05dSg" clientDependency="_CKYegKCTEea0vPC0H05dSg" name="" client="_eMZ8oKCEEea0vPC0H05dSg" supplier="_aHW5MKCMEea0vPC0H05dSg"/>
+      <packagedElement xmi:type="uml:Dependency" xmi:id="_CKYegKCTEea0vPC0H05dSg" name="" client="_BXuSgKCTEea0vPC0H05dSg" supplier="_eMZ8oKCEEea0vPC0H05dSg"/>
+      <packagedElement xmi:type="uml:Dependency" xmi:id="_DEEfkKCTEea0vPC0H05dSg" clientDependency="_EFrGgKCTEea0vPC0H05dSg" name="" client="_eMZ8oKCEEea0vPC0H05dSg" supplier="_QJBV4KCOEea0vPC0H05dSg"/>
+      <packagedElement xmi:type="uml:Dependency" xmi:id="_EFrGgKCTEea0vPC0H05dSg" name="" client="_DEEfkKCTEea0vPC0H05dSg" supplier="_eMZ8oKCEEea0vPC0H05dSg"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Package" xmi:id="_I35yUKCGEea0vPC0H05dSg" clientDependency="_XMFMIKCSEea0vPC0H05dSg _gYFBoKCSEea0vPC0H05dSg _irZvIKCSEea0vPC0H05dSg" name="ua.chntu.schedule.ui.presenter.activities">
+      <ownedComment xmi:type="uml:Comment" xmi:id="_rQXQQKCGEea0vPC0H05dSg">
+        <body>Activities and related classes.</body>
+      </ownedComment>
+      <packagedElement xmi:type="uml:Dependency" xmi:id="_XMFMIKCSEea0vPC0H05dSg" clientDependency="_d9qNoKCSEea0vPC0H05dSg" name="" client="_I35yUKCGEea0vPC0H05dSg" supplier="_USl0UKCDEea0vPC0H05dSg"/>
+      <packagedElement xmi:type="uml:Dependency" xmi:id="_d9qNoKCSEea0vPC0H05dSg" name="" client="_XMFMIKCSEea0vPC0H05dSg" supplier="_I35yUKCGEea0vPC0H05dSg"/>
+      <packagedElement xmi:type="uml:Dependency" xmi:id="_gYFBoKCSEea0vPC0H05dSg" clientDependency="_hTW-IKCSEea0vPC0H05dSg" name="" client="_I35yUKCGEea0vPC0H05dSg" supplier="_S5unIKCHEea0vPC0H05dSg"/>
+      <packagedElement xmi:type="uml:Dependency" xmi:id="_hTW-IKCSEea0vPC0H05dSg" name="" client="_gYFBoKCSEea0vPC0H05dSg" supplier="_I35yUKCGEea0vPC0H05dSg"/>
+      <packagedElement xmi:type="uml:Dependency" xmi:id="_irZvIKCSEea0vPC0H05dSg" clientDependency="_kNXRIKCSEea0vPC0H05dSg" name="" client="_I35yUKCGEea0vPC0H05dSg" supplier="_eMZ8oKCEEea0vPC0H05dSg"/>
+      <packagedElement xmi:type="uml:Dependency" xmi:id="_kNXRIKCSEea0vPC0H05dSg" name="" client="_irZvIKCSEea0vPC0H05dSg" supplier="_I35yUKCGEea0vPC0H05dSg"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Package" xmi:id="_USl0UKCDEea0vPC0H05dSg" name="ua.chntu.schedule.ui.model">
+      <ownedComment xmi:type="uml:Comment" xmi:id="_fCnBUKCDEea0vPC0H05dSg">
+        <body>Classes that contain the data to view on widgets and layouts.</body>
+      </ownedComment>
+    </packagedElement>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Model" xmi:id="_WibhQKCJEea0vPC0H05dSg" name="Services">
+    <ownedComment xmi:type="uml:Comment" xmi:id="_wqP-sKCJEea0vPC0H05dSg">
+      <body>This layer provides access to the main functionality of the program.</body>
+    </ownedComment>
+    <packagedElement xmi:type="uml:Package" xmi:id="_aHW5MKCMEea0vPC0H05dSg" clientDependency="_FVfIkKCTEea0vPC0H05dSg _uJdRYKCTEea0vPC0H05dSg" name="ua.chntu.sheduler.services">
+      <ownedComment xmi:type="uml:Comment" xmi:id="_fR3PMKCMEea0vPC0H05dSg">
+        <body>Gives the information from the database.</body>
+      </ownedComment>
+      <packagedElement xmi:type="uml:Dependency" xmi:id="_FVfIkKCTEea0vPC0H05dSg" clientDependency="_F7UZgKCTEea0vPC0H05dSg" name="" client="_aHW5MKCMEea0vPC0H05dSg" supplier="_QJBV4KCOEea0vPC0H05dSg"/>
+      <packagedElement xmi:type="uml:Dependency" xmi:id="_F7UZgKCTEea0vPC0H05dSg" name="" client="_FVfIkKCTEea0vPC0H05dSg" supplier="_aHW5MKCMEea0vPC0H05dSg"/>
+      <packagedElement xmi:type="uml:Dependency" xmi:id="_uJdRYKCTEea0vPC0H05dSg" clientDependency="_zEF_YKCTEea0vPC0H05dSg" name="" client="_aHW5MKCMEea0vPC0H05dSg" supplier="_hCtk8KCQEea0vPC0H05dSg"/>
+      <packagedElement xmi:type="uml:Dependency" xmi:id="_zEF_YKCTEea0vPC0H05dSg" name="" client="_uJdRYKCTEea0vPC0H05dSg" supplier="_aHW5MKCMEea0vPC0H05dSg"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Package" xmi:id="_QJBV4KCOEea0vPC0H05dSg" clientDependency="_fWH_8KCTEea0vPC0H05dSg" name="ua.chntu.schedule.import">
+      <ownedComment xmi:type="uml:Comment" xmi:id="_wo2eQKCOEea0vPC0H05dSg">
+        <body>Performs import of the schedule from an excel file to the database.</body>
+      </ownedComment>
+      <packagedElement xmi:type="uml:Dependency" xmi:id="_fWH_8KCTEea0vPC0H05dSg" name="" client="_QJBV4KCOEea0vPC0H05dSg" supplier="_hCtk8KCQEea0vPC0H05dSg"/>
+    </packagedElement>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Model" xmi:id="_niUNAKCNEea0vPC0H05dSg" name="Integration">
+    <ownedComment xmi:type="uml:Comment" xmi:id="_MwPU0KCREea0vPC0H05dSg">
+      <body>The integration layer provides the information from the database.</body>
+    </ownedComment>
+    <packagedElement xmi:type="uml:Package" xmi:id="_hCtk8KCQEea0vPC0H05dSg" clientDependency="_8GoW4KCTEea0vPC0H05dSg" name="ua.chntu.schedule.integration.db">
+      <ownedComment xmi:type="uml:Comment" xmi:id="_xibDMKCREea0vPC0H05dSg">
+        <body>Provides CRUD access to the database.</body>
+      </ownedComment>
+      <packagedElement xmi:type="uml:Dependency" xmi:id="_8GoW4KCTEea0vPC0H05dSg" clientDependency="_AdQY4KCUEea0vPC0H05dSg" name="" client="_hCtk8KCQEea0vPC0H05dSg" supplier="_5cDuYKCQEea0vPC0H05dSg"/>
+      <packagedElement xmi:type="uml:Dependency" xmi:id="_AdQY4KCUEea0vPC0H05dSg" name="" client="_8GoW4KCTEea0vPC0H05dSg" supplier="_hCtk8KCQEea0vPC0H05dSg"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Package" xmi:id="_5cDuYKCQEea0vPC0H05dSg" name="ua.chntu.schedule.integration.entities">
+      <ownedComment xmi:type="uml:Comment" xmi:id="_nRnhwKCREea0vPC0H05dSg">
+        <body>Describes all domain objects.</body>
+      </ownedComment>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Model" xmi:id="_CAsB4KCREea0vPC0H05dSg" clientDependency="_BnkP4KCUEea0vPC0H05dSg" name="Database">
+      <ownedComment xmi:type="uml:Comment" xmi:id="_D6rCUKCREea0vPC0H05dSg">
+        <body>SQLite</body>
+      </ownedComment>
+      <packagedElement xmi:type="uml:Dependency" xmi:id="_BnkP4KCUEea0vPC0H05dSg" clientDependency="_CsYi4KCUEea0vPC0H05dSg" name="" client="_CAsB4KCREea0vPC0H05dSg" supplier="_hCtk8KCQEea0vPC0H05dSg"/>
+      <packagedElement xmi:type="uml:Dependency" xmi:id="_CsYi4KCUEea0vPC0H05dSg" name="" client="_BnkP4KCUEea0vPC0H05dSg" supplier="_CAsB4KCREea0vPC0H05dSg"/>
+    </packagedElement>
+  </packagedElement>
+</uml:Model>
