@@ -1,11 +1,11 @@
-package ua.chntu.sheduler.integration.db;
+package ua.chntu.sheduler.integration.db.interfaces;
 
 import java.util.ArrayList;
 
 import ua.chntu.sheduler.integration.db.entities.Lesson;
 import ua.chntu.sheduler.integration.db.entities.Teacher;
 
-interface ITeachersHandler {
+public interface ITeachersHandler {
 	
 	int addTeacher(String name);
 	Teacher getTeacherByITeacher(int i_teacher);

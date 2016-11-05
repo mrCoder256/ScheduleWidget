@@ -1,6 +1,7 @@
-package ua.chntu.sheduler.integration.db;
+package ua.chntu.sheduler.integration.db.handlers;
 
 import ua.chntu.sheduler.integration.db.entities.Lesson;
+import ua.chntu.sheduler.integration.db.interfaces.ILessonsHandler;
 import android.content.ContentValues;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -10,7 +11,7 @@ import android.database.sqlite.SQLiteDatabase;
  * @author Vladyslav Shapoval
  *
  */
-public class LessonsHandler {
+public class LessonsHandler implements ILessonsHandler {
 
 	private DatabaseHandler databaseHanlder;
 

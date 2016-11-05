@@ -1,6 +1,10 @@
-package ua.chntu.sheduler.integration.db;
+package ua.chntu.sheduler.integration.db.handlers;
+
+import java.util.ArrayList;
 
 import ua.chntu.sheduler.integration.db.entities.Hall;
+import ua.chntu.sheduler.integration.db.entities.Lesson;
+import ua.chntu.sheduler.integration.db.interfaces.IHallsHandler;
 import android.content.ContentValues;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -10,7 +14,7 @@ import android.database.sqlite.SQLiteDatabase;
  * @author Vladyslav Shapoval
  *
  */
-public class HallsHandler {
+public class HallsHandler implements IHallsHandler {
 
 	private DatabaseHandler databaseHanlder;
 
@@ -78,5 +82,23 @@ public class HallsHandler {
 		hall.setIHall(Integer.parseInt(cursor.getString(0)));
 		hall.setLocation(cursor.getString(1));
 		return hall;
+	}
+
+	@Override
+	public int addHall() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public ArrayList<Hall> getListOfHalls() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public ArrayList<Lesson> getScheduleInHall(int i_hall) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 }

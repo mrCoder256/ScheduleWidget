@@ -1,6 +1,10 @@
-package ua.chntu.sheduler.integration.db;
+package ua.chntu.sheduler.integration.db.handlers;
 
+import java.util.ArrayList;
+
+import ua.chntu.sheduler.integration.db.entities.Lesson;
 import ua.chntu.sheduler.integration.db.entities.Teacher;
+import ua.chntu.sheduler.integration.db.interfaces.ITeachersHandler;
 import android.content.ContentValues;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -10,7 +14,7 @@ import android.database.sqlite.SQLiteDatabase;
  * @author Vladyslav Shapoval
  *
  */
-public class TeachersHandler {
+public class TeachersHandler implements ITeachersHandler {
 
 	private DatabaseHandler databaseHanlder;
 
@@ -55,5 +59,17 @@ public class TeachersHandler {
 		teacher.setITeacher(Integer.parseInt(cursor.getString(0)));
 		teacher.setName(cursor.getString(1));
 		return teacher;
+	}
+
+	@Override
+	public ArrayList<Teacher> getListOfTeachers() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public ArrayList<Lesson> getScheduleOfTeacher(int i_teacher) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 }

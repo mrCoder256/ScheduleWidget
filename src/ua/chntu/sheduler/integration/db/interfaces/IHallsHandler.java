@@ -1,11 +1,11 @@
-package ua.chntu.sheduler.integration.db;
+package ua.chntu.sheduler.integration.db.interfaces;
 
 import java.util.ArrayList;
 
 import ua.chntu.sheduler.integration.db.entities.Hall;
 import ua.chntu.sheduler.integration.db.entities.Lesson;
 
-interface IHallsHandler {
+public interface IHallsHandler {
 
 	int addHall();
 	Hall getHallByIHall(int i_hall);

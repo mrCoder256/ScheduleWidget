@@ -1,6 +1,10 @@
-package ua.chntu.sheduler.integration.db;
+package ua.chntu.sheduler.integration.db.handlers;
+
+import java.util.ArrayList;
 
 import ua.chntu.sheduler.integration.db.entities.Group;
+import ua.chntu.sheduler.integration.db.entities.Lesson;
+import ua.chntu.sheduler.integration.db.interfaces.IGroupsHandler;
 import android.content.ContentValues;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -10,7 +14,7 @@ import android.database.sqlite.SQLiteDatabase;
  * @author Vladyslav Shapoval
  *
  */
-public class GroupsHandler {
+public class GroupsHandler implements IGroupsHandler {
 
 	private DatabaseHandler databaseHanlder;
 
@@ -78,5 +82,23 @@ public class GroupsHandler {
 		group.setIGroup(Integer.parseInt(cursor.getString(0)));
 		group.setName(cursor.getString(1));
 		return group;
+	}
+
+	@Override
+	public ArrayList<Group> getListOfGroups() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public ArrayList<Lesson> getScheduleOfGroup(int i_group) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public ArrayList<Lesson> getScheduleOfCourse(String streamName) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 }
