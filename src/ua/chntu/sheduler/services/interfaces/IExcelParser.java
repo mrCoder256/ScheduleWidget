@@ -1,8 +1,8 @@
-package ua.chntu.sheduler.services;
+package ua.chntu.sheduler.services.interfaces;
 
 import java.io.FileInputStream;
 
-interface IExcelParser {
+public interface IExcelParser {
 	
 	void parse(FileInputStream excelFile);
 
