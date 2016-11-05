@@ -1,4 +1,4 @@
-package ua.chntu.sheduler.dbhandlers.entities;
+package ua.chntu.sheduler.integration.db.entities;
 
 /**
  *

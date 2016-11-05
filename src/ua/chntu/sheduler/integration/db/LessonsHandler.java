@@ -1,6 +1,6 @@
-package ua.chntu.sheduler.dbhandlers;
+package ua.chntu.sheduler.integration.db;
 
-import ua.chntu.sheduler.dbhandlers.entities.Lesson;
+import ua.chntu.sheduler.integration.db.entities.Lesson;
 import android.content.ContentValues;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;

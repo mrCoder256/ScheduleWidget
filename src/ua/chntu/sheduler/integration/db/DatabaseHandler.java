@@ -1,4 +1,4 @@
-package ua.chntu.sheduler.dbhandlers;
+package ua.chntu.sheduler.integration.db;
 
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
