@@ -1,5 +1,7 @@
 package ua.chntu.sheduler.integration.db.handlers;
 
+import java.util.ArrayList;
+
 import ua.chntu.sheduler.integration.db.entities.Lesson;
 import ua.chntu.sheduler.integration.db.interfaces.ILessonsHandler;
 import android.content.ContentValues;
@@ -82,6 +84,124 @@ public class LessonsHandler implements ILessonsHandler {
 		lesson.setITeacher(Integer.parseInt(cursor.getString(2)));
 		lesson.setIHall(Integer.parseInt(cursor.getString(3)));
 		return lesson;
+	}
+
+	/**
+	 * Returns list of lessons by the given i_group
+	 */
+	@Override
+	public ArrayList<Lesson> getScheduleOfGroup(int i_group) {
+		SQLiteDatabase db = this.databaseHanlder.getWritableDatabase();
+
+		ArrayList<Lesson> lessonsList = new ArrayList<Lesson>();
+		String query = "SELECT i_lesson, name, i_teacher, i_hall ";
+		query += "FROM Lessons ";
+		query += "LEFT JOIN LessonGroups ";
+		query += "ON LessonGroups.i_lesson = Lessons.i_lesson ";
+		query += "WHERE LessonGroups.i_group = ?";
+		Cursor cursor = db.rawQuery(query,
+				new String[] { String.valueOf(i_group) });
+		if (cursor != null) {
+			if (cursor.moveToFirst()) {
+				do {
+					Lesson lesson = new Lesson();
+					lesson.setILesson(Integer.parseInt(cursor.getString(0)));
+					lesson.setName(cursor.getString(1));
+					lesson.setITeacher(Integer.parseInt(cursor.getString(2)));
+					lesson.setIHall(Integer.parseInt(cursor.getString(3)));
+					lessonsList.add(lesson);
+				} while (cursor.moveToNext());
+			}
+		}
+		return lessonsList;
+	}
+
+	/**
+	 * Returns list of lessons by the given stream name
+	 */
+	@Override
+	public ArrayList<Lesson> getScheduleOfCourse(String streamName) {
+		SQLiteDatabase db = this.databaseHanlder.getWritableDatabase();
+
+		ArrayList<Lesson> lessonsList = new ArrayList<Lesson>();
+		String query = "SELECT i_lesson, name, i_teacher, i_hall ";
+		query += "FROM Lessons ";
+		query += "LEFT JOIN LessonGroups ";
+		query += "ON LessonGroups.i_lesson = Lessons.i_lesson ";
+		query += "LEFT JOIN Groups ";
+		query += "ON Groups.i_group = LessonGroups.i_group ";
+		query += "WHERE Groups.stream = ?";
+		Cursor cursor = db.rawQuery(query,
+				new String[] { String.valueOf(streamName) });
+		if (cursor != null) {
+			if (cursor.moveToFirst()) {
+				do {
+					Lesson lesson = new Lesson();
+					lesson.setILesson(Integer.parseInt(cursor.getString(0)));
+					lesson.setName(cursor.getString(1));
+					lesson.setITeacher(Integer.parseInt(cursor.getString(2)));
+					lesson.setIHall(Integer.parseInt(cursor.getString(3)));
+					lessonsList.add(lesson);
+				} while (cursor.moveToNext());
+			}
+		}
+		return lessonsList;
+	}
+
+	/**
+	 * Returns list of lessons by the given i_hall
+	 */
+	@Override
+	public ArrayList<Lesson> getScheduleInHall(int i_hall) {
+		SQLiteDatabase db = this.databaseHanlder.getWritableDatabase();
+
+		ArrayList<Lesson> lessonsList = new ArrayList<Lesson>();
+		String query = "SELECT i_lesson, name, i_teacher, i_hall ";
+		query += "FROM Lessons ";
+		query += "WHERE Lessons.i_hall = ?";
+		Cursor cursor = db.rawQuery(query,
+				new String[] { String.valueOf(i_hall) });
+		if (cursor != null) {
+			if (cursor.moveToFirst()) {
+				do {
+					Lesson lesson = new Lesson();
+					lesson.setILesson(Integer.parseInt(cursor.getString(0)));
+					lesson.setName(cursor.getString(1));
+					lesson.setITeacher(Integer.parseInt(cursor.getString(2)));
+					lesson.setIHall(Integer.parseInt(cursor.getString(3)));
+					lessonsList.add(lesson);
+				} while (cursor.moveToNext());
+			}
+		}
+		return lessonsList;
+	}
+
+	/**
+	 * Returns list of lessons by the given i_teacher
+	 */
+	@Override
+	public ArrayList<Lesson> getScheduleOfTeacher(int i_teacher) {
+		SQLiteDatabase db = this.databaseHanlder.getWritableDatabase();
+
+		ArrayList<Lesson> lessonsList = new ArrayList<Lesson>();
+		String query = "SELECT i_lesson, name, i_teacher, i_hall ";
+		query += "FROM Lessons ";
+		query += "WHERE Lessons.i_teacher = ?";
+		Cursor cursor = db.rawQuery(query,
+				new String[] { String.valueOf(i_teacher) });
+		if (cursor != null) {
+			if (cursor.moveToFirst()) {
+				do {
+					Lesson lesson = new Lesson();
+					lesson.setILesson(Integer.parseInt(cursor.getString(0)));
+					lesson.setName(cursor.getString(1));
+					lesson.setITeacher(Integer.parseInt(cursor.getString(2)));
+					lesson.setIHall(Integer.parseInt(cursor.getString(3)));
+					lessonsList.add(lesson);
+				} while (cursor.moveToNext());
+			}
+		}
+		return lessonsList;
 	}
 
 }

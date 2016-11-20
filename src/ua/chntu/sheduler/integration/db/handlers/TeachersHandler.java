@@ -2,7 +2,6 @@ package ua.chntu.sheduler.integration.db.handlers;
 
 import java.util.ArrayList;
 
-import ua.chntu.sheduler.integration.db.entities.Lesson;
 import ua.chntu.sheduler.integration.db.entities.Teacher;
 import ua.chntu.sheduler.integration.db.interfaces.ITeachersHandler;
 import android.content.ContentValues;
@@ -61,15 +60,27 @@ public class TeachersHandler implements ITeachersHandler {
 		return teacher;
 	}
 
+	/**
+	 * Returns list of all teachers
+	 */
 	@Override
 	public ArrayList<Teacher> getListOfTeachers() {
-		// TODO Auto-generated method stub
-		return null;
+		SQLiteDatabase db = this.databaseHanlder.getWritableDatabase();
+
+		ArrayList<Teacher> teachersList = new ArrayList<Teacher>();
+		String query = "SELECT i_teacher, name FROM Teachers";
+		Cursor cursor = db.rawQuery(query, null);
+		if (cursor != null) {
+			if (cursor.moveToFirst()) {
+				do {
+					Teacher teacher = new Teacher();
+					teacher.setITeacher(Integer.parseInt(cursor.getString(0)));
+					teacher.setName(cursor.getString(1));
+					teachersList.add(teacher);
+				} while (cursor.moveToNext());
+			}
+		}
+		return teachersList;
 	}
 
-	@Override
-	public ArrayList<Lesson> getScheduleOfTeacher(int i_teacher) {
-		// TODO Auto-generated method stub
-		return null;
-	}
 }

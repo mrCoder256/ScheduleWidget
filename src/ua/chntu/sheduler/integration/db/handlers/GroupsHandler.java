@@ -3,7 +3,6 @@ package ua.chntu.sheduler.integration.db.handlers;
 import java.util.ArrayList;
 
 import ua.chntu.sheduler.integration.db.entities.Group;
-import ua.chntu.sheduler.integration.db.entities.Lesson;
 import ua.chntu.sheduler.integration.db.interfaces.IGroupsHandler;
 import android.content.ContentValues;
 import android.database.Cursor;
@@ -48,7 +47,7 @@ public class GroupsHandler implements IGroupsHandler {
 	public Group getGroupByIGroup(int i_group) {
 		SQLiteDatabase db = this.databaseHanlder.getWritableDatabase();
 
-		String query = "SELECT i_group, name FROM Groups WHERE i_group = ?";
+		String query = "SELECT i_group, name, stream FROM Groups WHERE i_group = ?";
 		Cursor cursor = db.rawQuery(query,
 				new String[] { String.valueOf(i_group) });
 		if (cursor != null) {
@@ -59,6 +58,7 @@ public class GroupsHandler implements IGroupsHandler {
 		Group group = new Group();
 		group.setIGroup(Integer.parseInt(cursor.getString(0)));
 		group.setName(cursor.getString(1));
+		group.setStream(cursor.getString(2));
 		return group;
 	}
 
@@ -71,7 +71,7 @@ public class GroupsHandler implements IGroupsHandler {
 	public Group getGroupByName(String name) {
 		SQLiteDatabase db = this.databaseHanlder.getWritableDatabase();
 
-		String query = "SELECT i_group, name FROM Groups WHERE name = ?";
+		String query = "SELECT i_group, name, stream FROM Groups WHERE name = ?";
 		Cursor cursor = db.rawQuery(query, new String[] { name });
 		if (cursor != null) {
 			cursor.moveToFirst();
@@ -81,24 +81,31 @@ public class GroupsHandler implements IGroupsHandler {
 		Group group = new Group();
 		group.setIGroup(Integer.parseInt(cursor.getString(0)));
 		group.setName(cursor.getString(1));
+		group.setStream(cursor.getString(2));
 		return group;
 	}
 
-	@Override
+	/**
+	 * Returns list of all groups
+	 */
 	public ArrayList<Group> getListOfGroups() {
-		// TODO Auto-generated method stub
-		return null;
+		SQLiteDatabase db = this.databaseHanlder.getWritableDatabase();
+
+		ArrayList<Group> groupsList = new ArrayList<Group>();
+		String query = "SELECT i_group, name, stream FROM Groups";
+		Cursor cursor = db.rawQuery(query, null);
+		if (cursor != null) {
+			if (cursor.moveToFirst()) {
+				do {
+					Group group = new Group();
+					group.setIGroup(Integer.parseInt(cursor.getString(0)));
+					group.setName(cursor.getString(1));
+					group.setStream(cursor.getString(2));
+					groupsList.add(group);
+				} while (cursor.moveToNext());
+			}
+		}
+		return groupsList;
 	}
 
-	@Override
-	public ArrayList<Lesson> getScheduleOfGroup(int i_group) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public ArrayList<Lesson> getScheduleOfCourse(String streamName) {
-		// TODO Auto-generated method stub
-		return null;
-	}
 }

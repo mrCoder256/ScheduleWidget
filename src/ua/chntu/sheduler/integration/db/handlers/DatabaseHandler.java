@@ -130,7 +130,8 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 	private void createGroupsTable(SQLiteDatabase db) {
 		String query = "CREATE TABLE Groups (";
 		query += "i_group integer PRIMARY KEY AUTOINCREMENT,";
-		query += "name text);";
+		query += "name text,";
+		query += "stream text);";
 		db.execSQL(query);
 	}
 

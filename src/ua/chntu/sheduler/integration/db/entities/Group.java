@@ -9,6 +9,7 @@ public class Group {
 
 	private int i_group;
 	private String name;
+	private String stream;
 
 	public int getIGroup() {
 		return i_group;
@@ -24,6 +25,14 @@ public class Group {
 
 	public void setName(String name) {
 		this.name = name;
+	}
+
+	public String getStream() {
+		return stream;
+	}
+
+	public void setStream(String stream) {
+		this.stream = stream;
 	}
 
 }
