@@ -46,14 +46,15 @@ public class LessonsHandler implements ILessonsHandler {
 	 * @param day
 	 * @return returns id of the created entity (i_lesson)
 	 */
-	public int addLesson(String name, int i_teacher, int i_hall, String day) {
+	public int addLesson(String name, int i_teacher, int i_hall, String day, int number) {
 		SQLiteDatabase db = this.databaseHanlder.getWritableDatabase();
 		ContentValues values = new ContentValues();
 		values.put("name", name);
 		values.put("i_teacher", i_teacher);
 		values.put("i_hall", i_hall);
 		values.put("day", day);
-
+		values.put("number", number);
+		
 		Long i_lesson = db.insert("Lessons", null, values);
 		db.close();
 
@@ -69,7 +70,7 @@ public class LessonsHandler implements ILessonsHandler {
 	public Lesson getLessonByILesson(int i_lesson) {
 		SQLiteDatabase db = this.databaseHanlder.getWritableDatabase();
 
-		String query = "SELECT i_lesson, name, i_teacher, i_hall ";
+		String query = "SELECT i_lesson, name, i_teacher, i_hall, number";
 		query += "FROM Lessons WHERE i_lesson = ?";
 		Cursor cursor = db.rawQuery(query,
 				new String[] { String.valueOf(i_lesson) });
@@ -83,6 +84,7 @@ public class LessonsHandler implements ILessonsHandler {
 		lesson.setName(cursor.getString(1));
 		lesson.setITeacher(Integer.parseInt(cursor.getString(2)));
 		lesson.setIHall(Integer.parseInt(cursor.getString(3)));
+		lesson.setNumber(Integer.parseInt(cursor.getString(4)));
 		return lesson;
 	}
 
@@ -94,7 +96,7 @@ public class LessonsHandler implements ILessonsHandler {
 		SQLiteDatabase db = this.databaseHanlder.getWritableDatabase();
 
 		ArrayList<Lesson> lessonsList = new ArrayList<Lesson>();
-		String query = "SELECT i_lesson, name, i_teacher, i_hall ";
+		String query = "SELECT i_lesson, name, i_teacher, i_hall, number ";
 		query += "FROM Lessons ";
 		query += "LEFT JOIN LessonGroups ";
 		query += "ON LessonGroups.i_lesson = Lessons.i_lesson ";
@@ -109,6 +111,7 @@ public class LessonsHandler implements ILessonsHandler {
 					lesson.setName(cursor.getString(1));
 					lesson.setITeacher(Integer.parseInt(cursor.getString(2)));
 					lesson.setIHall(Integer.parseInt(cursor.getString(3)));
+					lesson.setNumber(Integer.parseInt(cursor.getString(4)));
 					lessonsList.add(lesson);
 				} while (cursor.moveToNext());
 			}
@@ -124,7 +127,7 @@ public class LessonsHandler implements ILessonsHandler {
 		SQLiteDatabase db = this.databaseHanlder.getWritableDatabase();
 
 		ArrayList<Lesson> lessonsList = new ArrayList<Lesson>();
-		String query = "SELECT i_lesson, name, i_teacher, i_hall ";
+		String query = "SELECT i_lesson, name, i_teacher, i_hall, number ";
 		query += "FROM Lessons ";
 		query += "LEFT JOIN LessonGroups ";
 		query += "ON LessonGroups.i_lesson = Lessons.i_lesson ";
@@ -141,6 +144,7 @@ public class LessonsHandler implements ILessonsHandler {
 					lesson.setName(cursor.getString(1));
 					lesson.setITeacher(Integer.parseInt(cursor.getString(2)));
 					lesson.setIHall(Integer.parseInt(cursor.getString(3)));
+					lesson.setNumber(Integer.parseInt(cursor.getString(4)));
 					lessonsList.add(lesson);
 				} while (cursor.moveToNext());
 			}
@@ -156,7 +160,7 @@ public class LessonsHandler implements ILessonsHandler {
 		SQLiteDatabase db = this.databaseHanlder.getWritableDatabase();
 
 		ArrayList<Lesson> lessonsList = new ArrayList<Lesson>();
-		String query = "SELECT i_lesson, name, i_teacher, i_hall ";
+		String query = "SELECT i_lesson, name, i_teacher, i_hall, number ";
 		query += "FROM Lessons ";
 		query += "WHERE Lessons.i_hall = ?";
 		Cursor cursor = db.rawQuery(query,
@@ -169,6 +173,7 @@ public class LessonsHandler implements ILessonsHandler {
 					lesson.setName(cursor.getString(1));
 					lesson.setITeacher(Integer.parseInt(cursor.getString(2)));
 					lesson.setIHall(Integer.parseInt(cursor.getString(3)));
+					lesson.setNumber(Integer.parseInt(cursor.getString(4)));
 					lessonsList.add(lesson);
 				} while (cursor.moveToNext());
 			}
@@ -184,7 +189,7 @@ public class LessonsHandler implements ILessonsHandler {
 		SQLiteDatabase db = this.databaseHanlder.getWritableDatabase();
 
 		ArrayList<Lesson> lessonsList = new ArrayList<Lesson>();
-		String query = "SELECT i_lesson, name, i_teacher, i_hall ";
+		String query = "SELECT i_lesson, name, i_teacher, i_hall, number ";
 		query += "FROM Lessons ";
 		query += "WHERE Lessons.i_teacher = ?";
 		Cursor cursor = db.rawQuery(query,
@@ -197,6 +202,7 @@ public class LessonsHandler implements ILessonsHandler {
 					lesson.setName(cursor.getString(1));
 					lesson.setITeacher(Integer.parseInt(cursor.getString(2)));
 					lesson.setIHall(Integer.parseInt(cursor.getString(3)));
+					lesson.setNumber(Integer.parseInt(cursor.getString(4)));
 					lessonsList.add(lesson);
 				} while (cursor.moveToNext());
 			}

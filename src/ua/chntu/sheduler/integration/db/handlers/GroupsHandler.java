@@ -27,12 +27,13 @@ public class GroupsHandler implements IGroupsHandler {
 	 * @param name
 	 * @return returns id of the created entity (i_group)
 	 */
-	public int addGroup(String name) {
+	public int addGroup(String name, String stream) {
 		SQLiteDatabase db = this.databaseHanlder.getWritableDatabase();
 		ContentValues values = new ContentValues();
 		values.put("name", name);
-
-		Long i_group = db.insert("Group", null, values);
+		values.put("stream", stream);
+		
+		Long i_group = db.insert("Groups", null, values);
 		db.close();
 
 		return i_group.intValue();

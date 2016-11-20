@@ -11,6 +11,7 @@ public class Lesson {
 	private String name;
 	private int i_teacher;
 	private int i_hall;
+	private int number;
 
 	public int getILesson() {
 		return i_lesson;
@@ -42,6 +43,14 @@ public class Lesson {
 
 	public void setIHall(int i_hall) {
 		this.i_hall = i_hall;
+	}
+
+	public int getNumber() {
+		return number;
+	}
+
+	public void setNumber(int number) {
+		this.number = number;
 	}
 
 }

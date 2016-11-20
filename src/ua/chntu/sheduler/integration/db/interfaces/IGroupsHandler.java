@@ -6,7 +6,7 @@ import ua.chntu.sheduler.integration.db.entities.Group;
 
 public interface IGroupsHandler {
 	
-	int addGroup(String name);
+	int addGroup(String name, String stream);
 	Group getGroupByIGroup(int i_group);
 	Group getGroupByName(String name);
 	ArrayList<Group> getListOfGroups();
