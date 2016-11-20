@@ -4,12 +4,18 @@
     <availablePage>
       <emfPageIdentifier href="diagrams.notation#_oWgEAKCCEea0vPC0H05dSg"/>
     </availablePage>
+    <availablePage>
+      <emfPageIdentifier href="diagrams.notation#_gwE4wKGAEeabBYKVicQlQw"/>
+    </availablePage>
   </pageList>
   <sashModel currentSelection="//@sashModel/@windows.0/@children.0">
     <windows>
       <children xsi:type="di:TabFolder">
         <children>
           <emfPageIdentifier href="diagrams.notation#_oWgEAKCCEea0vPC0H05dSg"/>
+        </children>
+        <children>
+          <emfPageIdentifier href="diagrams.notation#_gwE4wKGAEeabBYKVicQlQw"/>
         </children>
       </children>
     </windows>

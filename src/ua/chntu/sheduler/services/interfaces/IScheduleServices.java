@@ -1,4 +1,4 @@
-package ua.chntu.sheduler.services;
+package ua.chntu.sheduler.services.interfaces;
 
 import java.util.ArrayList;
 

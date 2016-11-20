@@ -1,5 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<uml:Model xmi:version="20110701" xmlns:xmi="http://www.omg.org/spec/XMI/20110701" xmlns:uml="http://www.eclipse.org/uml2/4.0.0/UML" xmi:id="_oWeO0KCCEea0vPC0H05dSg" name="model">
+<uml:Model xmi:version="20110701" xmlns:xmi="http://www.omg.org/spec/XMI/20110701" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/4.0.0/UML" xmi:id="_oWeO0KCCEea0vPC0H05dSg" name="model">
+  <packageImport xmi:type="uml:PackageImport" xmi:id="_pDoL4KGXEeaXzPGVIuAFWg">
+    <importedPackage xmi:type="uml:Profile" href="pathmap://Papyrus_JAVA_PROFILES/java.profile.uml#_6TYLMN0yEd6P1qtlpBOZyg"/>
+  </packageImport>
+  <packageImport xmi:type="uml:PackageImport" xmi:id="_rYg_oKGXEeaXzPGVIuAFWg">
+    <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#_0"/>
+  </packageImport>
+  <packageImport xmi:type="uml:PackageImport" xmi:id="_H2RkQKGZEeaXzPGVIuAFWg">
+    <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#_0"/>
+  </packageImport>
+  <packageImport xmi:type="uml:PackageImport" xmi:id="_BqI8sKGaEeaXzPGVIuAFWg">
+    <importedPackage xmi:type="uml:Package" href="pathmap://Papyrus_Alf_LIBRARIES/alflibrary.uml#_OP8BkH1AEeCKy5kSqd4eVw"/>
+  </packageImport>
   <packagedElement xmi:type="uml:Model" xmi:id="_pV0L8KCCEea0vPC0H05dSg" name="UI">
     <ownedComment xmi:type="uml:Comment" xmi:id="_ArptIKCHEea0vPC0H05dSg">
       <body>This layer implements the MVP pattern.</body>
@@ -9,14 +21,10 @@
         <body>Xml layouts.</body>
       </ownedComment>
     </packagedElement>
-    <packagedElement xmi:type="uml:Package" xmi:id="_eMZ8oKCEEea0vPC0H05dSg" clientDependency="_BXuSgKCTEea0vPC0H05dSg _DEEfkKCTEea0vPC0H05dSg" name="ua.chntu.schedule.ui.presenter">
+    <packagedElement xmi:type="uml:Package" xmi:id="_eMZ8oKCEEea0vPC0H05dSg" name="ua.chntu.schedule.ui.presenter">
       <ownedComment xmi:type="uml:Comment" xmi:id="_Rjk-cKCFEea0vPC0H05dSg">
         <body>A widget provider and related classes.</body>
       </ownedComment>
-      <packagedElement xmi:type="uml:Dependency" xmi:id="_BXuSgKCTEea0vPC0H05dSg" clientDependency="_CKYegKCTEea0vPC0H05dSg" name="" client="_eMZ8oKCEEea0vPC0H05dSg" supplier="_aHW5MKCMEea0vPC0H05dSg"/>
-      <packagedElement xmi:type="uml:Dependency" xmi:id="_CKYegKCTEea0vPC0H05dSg" name="" client="_BXuSgKCTEea0vPC0H05dSg" supplier="_eMZ8oKCEEea0vPC0H05dSg"/>
-      <packagedElement xmi:type="uml:Dependency" xmi:id="_DEEfkKCTEea0vPC0H05dSg" clientDependency="_EFrGgKCTEea0vPC0H05dSg" name="" client="_eMZ8oKCEEea0vPC0H05dSg" supplier="_QJBV4KCOEea0vPC0H05dSg"/>
-      <packagedElement xmi:type="uml:Dependency" xmi:id="_EFrGgKCTEea0vPC0H05dSg" name="" client="_DEEfkKCTEea0vPC0H05dSg" supplier="_eMZ8oKCEEea0vPC0H05dSg"/>
     </packagedElement>
     <packagedElement xmi:type="uml:Package" xmi:id="_I35yUKCGEea0vPC0H05dSg" clientDependency="_XMFMIKCSEea0vPC0H05dSg _gYFBoKCSEea0vPC0H05dSg _irZvIKCSEea0vPC0H05dSg" name="ua.chntu.schedule.ui.presenter.activities">
       <ownedComment xmi:type="uml:Comment" xmi:id="_rQXQQKCGEea0vPC0H05dSg">
@@ -39,37 +47,47 @@
     <ownedComment xmi:type="uml:Comment" xmi:id="_wqP-sKCJEea0vPC0H05dSg">
       <body>This layer provides access to the main functionality of the program.</body>
     </ownedComment>
-    <packagedElement xmi:type="uml:Package" xmi:id="_aHW5MKCMEea0vPC0H05dSg" clientDependency="_FVfIkKCTEea0vPC0H05dSg _uJdRYKCTEea0vPC0H05dSg" name="ua.chntu.sheduler.services">
+    <packagedElement xmi:type="uml:Package" xmi:id="_aHW5MKCMEea0vPC0H05dSg" clientDependency="_iDFYcKLjEeaW7KsyDfDpww _ksJscKLjEeaW7KsyDfDpww" name="ua.chntu.shedule.services.interfaces">
       <ownedComment xmi:type="uml:Comment" xmi:id="_fR3PMKCMEea0vPC0H05dSg">
-        <body>Gives the information from the database.</body>
+        <body>Gives the information from the database. Performs import of the schedule from an excel file to the database.</body>
       </ownedComment>
-      <packagedElement xmi:type="uml:Dependency" xmi:id="_FVfIkKCTEea0vPC0H05dSg" clientDependency="_F7UZgKCTEea0vPC0H05dSg" name="" client="_aHW5MKCMEea0vPC0H05dSg" supplier="_QJBV4KCOEea0vPC0H05dSg"/>
-      <packagedElement xmi:type="uml:Dependency" xmi:id="_F7UZgKCTEea0vPC0H05dSg" name="" client="_FVfIkKCTEea0vPC0H05dSg" supplier="_aHW5MKCMEea0vPC0H05dSg"/>
-      <packagedElement xmi:type="uml:Dependency" xmi:id="_uJdRYKCTEea0vPC0H05dSg" clientDependency="_zEF_YKCTEea0vPC0H05dSg" name="" client="_aHW5MKCMEea0vPC0H05dSg" supplier="_hCtk8KCQEea0vPC0H05dSg"/>
-      <packagedElement xmi:type="uml:Dependency" xmi:id="_zEF_YKCTEea0vPC0H05dSg" name="" client="_uJdRYKCTEea0vPC0H05dSg" supplier="_aHW5MKCMEea0vPC0H05dSg"/>
-    </packagedElement>
-    <packagedElement xmi:type="uml:Package" xmi:id="_QJBV4KCOEea0vPC0H05dSg" clientDependency="_fWH_8KCTEea0vPC0H05dSg" name="ua.chntu.schedule.import">
-      <ownedComment xmi:type="uml:Comment" xmi:id="_wo2eQKCOEea0vPC0H05dSg">
-        <body>Performs import of the schedule from an excel file to the database.</body>
-      </ownedComment>
-      <packagedElement xmi:type="uml:Dependency" xmi:id="_fWH_8KCTEea0vPC0H05dSg" name="" client="_QJBV4KCOEea0vPC0H05dSg" supplier="_hCtk8KCQEea0vPC0H05dSg"/>
+      <packagedElement xmi:type="uml:DataType" xmi:id="_kzJGwKGaEeaXzPGVIuAFWg" name="FIleInputStream"/>
+      <packagedElement xmi:type="uml:Dependency" xmi:id="_iDFYcKLjEeaW7KsyDfDpww" clientDependency="_jEi1cKLjEeaW7KsyDfDpww" name="" client="_aHW5MKCMEea0vPC0H05dSg" supplier="_eMZ8oKCEEea0vPC0H05dSg"/>
+      <packagedElement xmi:type="uml:Dependency" xmi:id="_jEi1cKLjEeaW7KsyDfDpww" name="" client="_iDFYcKLjEeaW7KsyDfDpww" supplier="_aHW5MKCMEea0vPC0H05dSg"/>
+      <packagedElement xmi:type="uml:Dependency" xmi:id="_ksJscKLjEeaW7KsyDfDpww" clientDependency="_o8-ocKLjEeaW7KsyDfDpww" name="" client="_aHW5MKCMEea0vPC0H05dSg" supplier="_hCtk8KCQEea0vPC0H05dSg"/>
+      <packagedElement xmi:type="uml:Dependency" xmi:id="_o8-ocKLjEeaW7KsyDfDpww" name="" client="_ksJscKLjEeaW7KsyDfDpww" supplier="_aHW5MKCMEea0vPC0H05dSg"/>
     </packagedElement>
   </packagedElement>
   <packagedElement xmi:type="uml:Model" xmi:id="_niUNAKCNEea0vPC0H05dSg" name="Integration">
     <ownedComment xmi:type="uml:Comment" xmi:id="_MwPU0KCREea0vPC0H05dSg">
-      <body>The integration layer provides the information from the database.</body>
+      <body>This layer provides the information from the database.</body>
     </ownedComment>
-    <packagedElement xmi:type="uml:Package" xmi:id="_hCtk8KCQEea0vPC0H05dSg" clientDependency="_8GoW4KCTEea0vPC0H05dSg" name="ua.chntu.schedule.integration.db">
+    <packagedElement xmi:type="uml:Package" xmi:id="_hCtk8KCQEea0vPC0H05dSg" clientDependency="_8GoW4KCTEea0vPC0H05dSg" name="ua.chntu.schedule.integration.db.interfaces">
       <ownedComment xmi:type="uml:Comment" xmi:id="_xibDMKCREea0vPC0H05dSg">
         <body>Provides CRUD access to the database.</body>
       </ownedComment>
       <packagedElement xmi:type="uml:Dependency" xmi:id="_8GoW4KCTEea0vPC0H05dSg" clientDependency="_AdQY4KCUEea0vPC0H05dSg" name="" client="_hCtk8KCQEea0vPC0H05dSg" supplier="_5cDuYKCQEea0vPC0H05dSg"/>
       <packagedElement xmi:type="uml:Dependency" xmi:id="_AdQY4KCUEea0vPC0H05dSg" name="" client="_8GoW4KCTEea0vPC0H05dSg" supplier="_hCtk8KCQEea0vPC0H05dSg"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="_ok-n4KLSEeaW7KsyDfDpww" name="T"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="_uXL3EKLSEeaW7KsyDfDpww" name="TeachersHandler"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="_1bhcgKLSEeaW7KsyDfDpww" name="GroupsHandler"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="_54v1wKLSEeaW7KsyDfDpww" name="HallsHandler"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="_9Y7X8KLSEeaW7KsyDfDpww" name="LessonsHandler"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="_NztdcKLVEeaW7KsyDfDpww" name="GroupsHandler"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="_LAK3cKLYEeaW7KsyDfDpww" name="DatabaseHendler"/>
     </packagedElement>
     <packagedElement xmi:type="uml:Package" xmi:id="_5cDuYKCQEea0vPC0H05dSg" name="ua.chntu.schedule.integration.entities">
       <ownedComment xmi:type="uml:Comment" xmi:id="_nRnhwKCREea0vPC0H05dSg">
         <body>Describes all domain objects.</body>
       </ownedComment>
+      <packagedElement xmi:type="uml:Class" xmi:id="_x4AOwKGbEeaXzPGVIuAFWg" name="ArrayList&lt;Group>"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="_BZB3MKGdEeaXzPGVIuAFWg" name="ArrayList&lt;Lesson>"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="_D5wSEKGeEeaXzPGVIuAFWg" name="ArrayList&lt;Teacher>"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="_ou7NkKGfEeaXzPGVIuAFWg" name="ArrayList&lt;Hall>"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="_yCDe8KLVEeaW7KsyDfDpww" name="Group"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="_togkcKLYEeaW7KsyDfDpww" name="Hall"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="_eBQtUKLZEeaW7KsyDfDpww" name="Teacher"/>
+      <packagedElement xmi:type="uml:Class" xmi:id="_eQ5Z4KLbEeaW7KsyDfDpww" name="Lesson"/>
     </packagedElement>
     <packagedElement xmi:type="uml:Model" xmi:id="_CAsB4KCREea0vPC0H05dSg" clientDependency="_BnkP4KCUEea0vPC0H05dSg" name="Database">
       <ownedComment xmi:type="uml:Comment" xmi:id="_D6rCUKCREea0vPC0H05dSg">
@@ -79,4 +97,245 @@
       <packagedElement xmi:type="uml:Dependency" xmi:id="_CsYi4KCUEea0vPC0H05dSg" name="" client="_BnkP4KCUEea0vPC0H05dSg" supplier="_CAsB4KCREea0vPC0H05dSg"/>
     </packagedElement>
   </packagedElement>
+  <packagedElement xmi:type="uml:Model" xmi:id="_k_JhQKGAEeabBYKVicQlQw" name="Services">
+    <packagedElement xmi:type="uml:Package" xmi:id="_NeluEKGNEeaXzPGVIuAFWg" name="ua.chntu.sheduler.services.interfaces">
+      <packagedElement xmi:type="uml:Interface" xmi:id="_uoYAIKGSEeaXzPGVIuAFWg" clientDependency="_Ze0OIKLfEeaW7KsyDfDpww _Pm__AKLgEeaW7KsyDfDpww" name="IScheduleServices">
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_cGPdgKGZEeaXzPGVIuAFWg" name="importScheduleFromExcel">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_vbN4sKGaEeaXzPGVIuAFWg" name="excelFileName">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_BWDRIKGcEeaXzPGVIuAFWg" value="1"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_BWD4MKGcEeaXzPGVIuAFWg" value="1"/>
+          </ownedParameter>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_zcaOkKNNEeaeMbw2xL2vrQ" name="success" direction="return">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
+          </ownedParameter>
+        </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_wH8b0KGaEeaXzPGVIuAFWg" name="getListOfGroups" visibility="public">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_dhpZoKGbEeaXzPGVIuAFWg" name="groups" type="_x4AOwKGbEeaXzPGVIuAFWg" direction="return">
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_ynOsQKGbEeaXzPGVIuAFWg" value="1"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_ynOsQaGbEeaXzPGVIuAFWg" value="1"/>
+          </ownedParameter>
+        </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_XsFfAKGcEeaXzPGVIuAFWg" name="getScheduleOfGroup">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_lfj18KGcEeaXzPGVIuAFWg" name="groupId">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+          </ownedParameter>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_5X7HgKGcEeaXzPGVIuAFWg" name="lessons" type="_BZB3MKGdEeaXzPGVIuAFWg" direction="return"/>
+        </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_IdLPYKGdEeaXzPGVIuAFWg" name="getScheduleOfGroupStream">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_f5PRMKGdEeaXzPGVIuAFWg" name="groupStreamName">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_javpEKGdEeaXzPGVIuAFWg" name="lessons" type="_BZB3MKGdEeaXzPGVIuAFWg" direction="return"/>
+        </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_wokVQKGdEeaXzPGVIuAFWg" name="getListOfTeachers">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_51HkYKGdEeaXzPGVIuAFWg" name="teachers" type="_D5wSEKGeEeaXzPGVIuAFWg" direction="return"/>
+        </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_E25PwKGeEeaXzPGVIuAFWg" name="getScheduleOfTeacher">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_SsOycKGfEeaXzPGVIuAFWg" name="teacherId">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+          </ownedParameter>
+        </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_dzc-gKGfEeaXzPGVIuAFWg" name="getListOfHalls">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_j_7u4KGfEeaXzPGVIuAFWg" name="halls" type="_ou7NkKGfEeaXzPGVIuAFWg" direction="return"/>
+        </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_p1el8KGfEeaXzPGVIuAFWg" name="getScheduleInHall">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_1DxqYKGfEeaXzPGVIuAFWg" name="hallId">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+          </ownedParameter>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_3NPRQKGfEeaXzPGVIuAFWg" name="lessons" type="_BZB3MKGdEeaXzPGVIuAFWg" direction="return"/>
+        </ownedOperation>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Dependency" xmi:id="_Ze0OIKLfEeaW7KsyDfDpww" clientDependency="_ozG3kKLfEeaW7KsyDfDpww" name="" client="_uoYAIKGSEeaXzPGVIuAFWg" supplier="_GKg-0KLSEeaW7KsyDfDpww"/>
+      <packagedElement xmi:type="uml:Dependency" xmi:id="_ozG3kKLfEeaW7KsyDfDpww" name="" client="_Ze0OIKLfEeaW7KsyDfDpww" supplier="_uoYAIKGSEeaXzPGVIuAFWg"/>
+      <packagedElement xmi:type="uml:Dependency" xmi:id="_Pm__AKLgEeaW7KsyDfDpww" name="" client="_uoYAIKGSEeaXzPGVIuAFWg" supplier="_SJc5sKGYEeaXzPGVIuAFWg"/>
+      <packagedElement xmi:type="uml:Interface" xmi:id="_SJc5sKGYEeaXzPGVIuAFWg" name="IExcelParser">
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_TOHbsKGYEeaXzPGVIuAFWg" name="parse" visibility="public">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_K9hpEKGZEeaXzPGVIuAFWg" name="excelFile" type="_kzJGwKGaEeaXzPGVIuAFWg"/>
+        </ownedOperation>
+      </packagedElement>
+    </packagedElement>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Model" xmi:id="_zRXzQKGMEeaXzPGVIuAFWg" name="UI"/>
+  <packagedElement xmi:type="uml:Model" xmi:id="__h_N0KLgEeaW7KsyDfDpww" name="Integration">
+    <packagedElement xmi:type="uml:Model" xmi:id="_Kgy8MKLKEeaW7KsyDfDpww" name="ua.chntu.schedule.integration.db.interfaces">
+      <packagedElement xmi:type="uml:Interface" xmi:id="_GKg-0KLSEeaW7KsyDfDpww" clientDependency="_vl1IkKLfEeaW7KsyDfDpww _xN-LEKLfEeaW7KsyDfDpww _zDFSkKLfEeaW7KsyDfDpww _7mVGAKLfEeaW7KsyDfDpww" name="IDatabaseHandler">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_TLQ4UKLSEeaW7KsyDfDpww" name="databaseHandler" visibility="private" isStatic="true" type="_ok-n4KLSEeaW7KsyDfDpww"/>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_X4AUQKLSEeaW7KsyDfDpww" name="teachersHandler" visibility="private" isStatic="true" type="_uXL3EKLSEeaW7KsyDfDpww">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_YUTOsKLSEeaW7KsyDfDpww" value="1"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_YUVD4KLSEeaW7KsyDfDpww" value="1"/>
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_YUWSAKLSEeaW7KsyDfDpww">
+            <value xsi:nil="true"/>
+          </defaultValue>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_YcGf0KLSEeaW7KsyDfDpww" name="groupsHandler" visibility="private" isStatic="true" type="_1bhcgKLSEeaW7KsyDfDpww">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Yot_gKLSEeaW7KsyDfDpww" value="1"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_YovNoKLSEeaW7KsyDfDpww" value="1"/>
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_YowbwKLSEeaW7KsyDfDpww">
+            <value xsi:nil="true"/>
+          </defaultValue>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_Yu8jUKLSEeaW7KsyDfDpww" name="hallsHandler" visibility="private" isStatic="true" type="_54v1wKLSEeaW7KsyDfDpww">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Y50WkKLSEeaW7KsyDfDpww" value="1"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Y51ksKLSEeaW7KsyDfDpww" value="1"/>
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_Y52y0KLSEeaW7KsyDfDpww">
+            <value xsi:nil="true"/>
+          </defaultValue>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_ZC290KLSEeaW7KsyDfDpww" name="lessonsHandler" visibility="private" isStatic="true" type="_9Y7X8KLSEeaW7KsyDfDpww"/>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_aFJhQKLSEeaW7KsyDfDpww" name="getInstance">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_JjnMIKLTEeaW7KsyDfDpww" name="instance" type="_LAK3cKLYEeaW7KsyDfDpww" direction="return"/>
+        </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_aXFl0KLSEeaW7KsyDfDpww" name="getTeachersHandler">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_SLIbkKLTEeaW7KsyDfDpww" name="teachersHandler" type="_uXL3EKLSEeaW7KsyDfDpww" direction="return"/>
+        </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_ala8wKLSEeaW7KsyDfDpww" name="getGroupsHandler">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_cR0-wKLTEeaW7KsyDfDpww" name="groupsHandler" type="_1bhcgKLSEeaW7KsyDfDpww" direction="return"/>
+        </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_ay7NQKLSEeaW7KsyDfDpww" name="getHallsHandler">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_etz5AKLTEeaW7KsyDfDpww" name="hallsHandler" type="_54v1wKLSEeaW7KsyDfDpww" direction="return"/>
+        </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_bCRQ0KLSEeaW7KsyDfDpww" name="getLessonsHandler">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_lXOdAKLTEeaW7KsyDfDpww" name="lessonsHandler" type="_9Y7X8KLSEeaW7KsyDfDpww" direction="return"/>
+        </ownedOperation>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Interface" xmi:id="_dl2V8KLUEeaW7KsyDfDpww" name="IGroupsHandler" visibility="package">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_CoIV0KLVEeaW7KsyDfDpww" name="groupsHandler" visibility="private" type="_NztdcKLVEeaW7KsyDfDpww"/>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_QjUeUKLVEeaW7KsyDfDpww" name="addGroup" visibility="package">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_Vam9YKLVEeaW7KsyDfDpww" name="name">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_Y4k5EKLVEeaW7KsyDfDpww" name="i_group" direction="return">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+          </ownedParameter>
+        </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_fcEbQKLVEeaW7KsyDfDpww" name="getGroupByIGroup" visibility="package">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_jIvhUKLVEeaW7KsyDfDpww" name="i_group">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+          </ownedParameter>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_uRCrcKLVEeaW7KsyDfDpww" name="group" type="_yCDe8KLVEeaW7KsyDfDpww" direction="return"/>
+        </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_2s3BMKLVEeaW7KsyDfDpww" name="getGroupByName" visibility="package">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_5yQr4KLVEeaW7KsyDfDpww" name="name">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_89Wu4KLVEeaW7KsyDfDpww" name="group" type="_yCDe8KLVEeaW7KsyDfDpww" direction="return"/>
+        </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_toMl8KLZEeaW7KsyDfDpww" name="getListOfGroups" visibility="package">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_zkN4cKLZEeaW7KsyDfDpww" name="groups" type="_x4AOwKGbEeaXzPGVIuAFWg" direction="return"/>
+        </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_8iEc4KLcEeaW7KsyDfDpww" name="getScheduleOfGroup" visibility="package">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_C_FjoKLdEeaW7KsyDfDpww" name="i_group">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+          </ownedParameter>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_FvTogKLdEeaW7KsyDfDpww" name="schedule" type="_BZB3MKGdEeaXzPGVIuAFWg" direction="return"/>
+        </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_NhytYKLdEeaW7KsyDfDpww" name="getScheduleOfCourse" visibility="package">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_fg1s4KLdEeaW7KsyDfDpww" name="streamName">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_ifwVEKLdEeaW7KsyDfDpww" name="schedule" type="_BZB3MKGdEeaXzPGVIuAFWg" direction="return"/>
+        </ownedOperation>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Interface" xmi:id="_OfrrQKLYEeaW7KsyDfDpww" name="IHallsHandler">
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_Yd95UKLYEeaW7KsyDfDpww" name="addHall" visibility="package">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_bKns0KLYEeaW7KsyDfDpww" name="location">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_iz_5AKLYEeaW7KsyDfDpww" name="hallId" direction="return">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+          </ownedParameter>
+        </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_fFxTwKLYEeaW7KsyDfDpww" name="getHallByIHall" visibility="package">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_lNaAYKLYEeaW7KsyDfDpww" name="i_hall">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_mOOkMKLYEeaW7KsyDfDpww" name="hall" type="_togkcKLYEeaW7KsyDfDpww" direction="return"/>
+        </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_wA0foKLYEeaW7KsyDfDpww" name="getHallByLocation" visibility="package">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_zIvS0KLYEeaW7KsyDfDpww" name="location">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_16g24KLYEeaW7KsyDfDpww" name="hall" type="_togkcKLYEeaW7KsyDfDpww" direction="return"/>
+        </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_i9D48KLZEeaW7KsyDfDpww" name="getListOfHalls" visibility="package">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_3Aej8KLZEeaW7KsyDfDpww" name="halls" type="_ou7NkKGfEeaXzPGVIuAFWg" direction="return"/>
+        </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_vPyHcKLcEeaW7KsyDfDpww" name="getScheduleInHall" visibility="package">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_7CguoKLcEeaW7KsyDfDpww" name="schedule" type="_BZB3MKGdEeaXzPGVIuAFWg" direction="return"/>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_Jd72YKLdEeaW7KsyDfDpww" name="i_hall">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+          </ownedParameter>
+        </ownedOperation>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Interface" xmi:id="_84v0UKLYEeaW7KsyDfDpww" name="ILessonsHandler">
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_OhglUKLaEeaW7KsyDfDpww" name="addLesson" visibility="package">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_bX0JYKLaEeaW7KsyDfDpww" name="name">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_ghlfkKLaEeaW7KsyDfDpww" name="i_teacher">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+          </ownedParameter>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_iLjuEKLaEeaW7KsyDfDpww" name="i_hall">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+          </ownedParameter>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_jkTpsKLaEeaW7KsyDfDpww" name="day">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_oOHGYKLaEeaW7KsyDfDpww" name="lessinId" direction="return">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+          </ownedParameter>
+        </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_DK2ZoKLbEeaW7KsyDfDpww" name="addGroupToLesson" visibility="package">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_FZai8KLbEeaW7KsyDfDpww" name="i_group">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+          </ownedParameter>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_HI48gKLbEeaW7KsyDfDpww" name="i_lesson">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+          </ownedParameter>
+        </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_VTqZIKLbEeaW7KsyDfDpww" name="getLessonByILesson" visibility="package">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_ZR1e4KLbEeaW7KsyDfDpww" name="i_lesson">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+          </ownedParameter>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_bTWqsKLbEeaW7KsyDfDpww" name="lesson" type="_eQ5Z4KLbEeaW7KsyDfDpww" direction="return"/>
+        </ownedOperation>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Interface" xmi:id="_ExtUoKLZEeaW7KsyDfDpww" name="ITeachersHandler">
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_MV3poKLZEeaW7KsyDfDpww" name="addTeacher" visibility="package">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_PfAk0KLZEeaW7KsyDfDpww" name="name">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_nKCzIKNPEeaeMbw2xL2vrQ" name="id" direction="return">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+          </ownedParameter>
+        </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_VWRTIKLZEeaW7KsyDfDpww" name="getTeacherByITeacher" visibility="package">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_Z_lnoKLZEeaW7KsyDfDpww" name="i_teacher">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+          </ownedParameter>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_bBmeQKLZEeaW7KsyDfDpww" name="teacher" type="_eBQtUKLZEeaW7KsyDfDpww" direction="return"/>
+        </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_43GuYKLZEeaW7KsyDfDpww" name="getListOfTeachers" visibility="package">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_BBy34KLaEeaW7KsyDfDpww" name="teachers" type="_D5wSEKGeEeaXzPGVIuAFWg" direction="return"/>
+        </ownedOperation>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_AXJtgKLcEeaW7KsyDfDpww" name="getScheduleOfTeacher" visibility="package">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_PERCMKLcEeaW7KsyDfDpww" name="i_teacher">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+          </ownedParameter>
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_TnvNYKLcEeaW7KsyDfDpww" name="schedule" type="_BZB3MKGdEeaXzPGVIuAFWg" direction="return"/>
+        </ownedOperation>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Dependency" xmi:id="_vl1IkKLfEeaW7KsyDfDpww" name="" client="_GKg-0KLSEeaW7KsyDfDpww" supplier="_ExtUoKLZEeaW7KsyDfDpww"/>
+      <packagedElement xmi:type="uml:Dependency" xmi:id="_xN-LEKLfEeaW7KsyDfDpww" name="" client="_GKg-0KLSEeaW7KsyDfDpww" supplier="_84v0UKLYEeaW7KsyDfDpww"/>
+      <packagedElement xmi:type="uml:Dependency" xmi:id="_zDFSkKLfEeaW7KsyDfDpww" name="" client="_GKg-0KLSEeaW7KsyDfDpww" supplier="_OfrrQKLYEeaW7KsyDfDpww"/>
+      <packagedElement xmi:type="uml:Dependency" xmi:id="_7mVGAKLfEeaW7KsyDfDpww" name="" client="_GKg-0KLSEeaW7KsyDfDpww" supplier="_dl2V8KLUEeaW7KsyDfDpww"/>
+    </packagedElement>
+  </packagedElement>
+  <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_3Xw_4KGXEeaXzPGVIuAFWg">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_3YNEwKGXEeaXzPGVIuAFWg" source="http://www.eclipse.org/uml2/2.0.0/UML">
+      <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/JAVA/1#/"/>
+    </eAnnotations>
+    <appliedProfile xmi:type="uml:Profile" href="pathmap://Papyrus_JAVA_PROFILES/java.profile.uml#_6TYLMN0yEd6P1qtlpBOZyg"/>
+  </profileApplication>
 </uml:Model>
