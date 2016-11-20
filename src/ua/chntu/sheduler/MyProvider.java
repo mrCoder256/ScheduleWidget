@@ -5,6 +5,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import ua.chntu.sheduler.DateWrapper.Day;
+import ua.chntu.sheduler.excel.ReadExcelTest;
 import android.app.PendingIntent;
 import android.appwidget.AppWidgetManager;
 import android.appwidget.AppWidgetProvider;
@@ -113,20 +114,31 @@ public class MyProvider extends AppWidgetProvider {
 		if (action.equalsIgnoreCase(ACTION_MENU)) {
 			Log.d(LOG_TAG, "MENU is clicked");
 
-			int mAppWidgetId = AppWidgetManager.INVALID_APPWIDGET_ID;
-			Bundle extras = intent.getExtras();
-			if (extras != null) {
-				mAppWidgetId = extras.getInt(
-						AppWidgetManager.EXTRA_APPWIDGET_ID,
-						AppWidgetManager.INVALID_APPWIDGET_ID);
+			try {
+				ReadExcelTest excelTester = new ReadExcelTest(context
+						.getFilesDir().getPath() + "/feit.xls");
+				System.out.println("Data from the cell G10 is: "
+						+ excelTester.getCellData(5, 9, 6));
+				excelTester.printScheduleOfCourse(5, context.getFilesDir()
+						.getPath() + "/excelContent.txt");
+			} catch (Exception e1) {
+				e1.printStackTrace();
 			}
-			if (mAppWidgetId != AppWidgetManager.INVALID_APPWIDGET_ID) {
-				AppWidgetManager appWidgetManager = AppWidgetManager
-						.getInstance(context);
-				show_buttons = !show_buttons;
-				updateVisibilityOfButtons(context, appWidgetManager,
-						mAppWidgetId, widgetView);
-			}
+
+//			int mAppWidgetId = AppWidgetManager.INVALID_APPWIDGET_ID;
+//			Bundle extras = intent.getExtras();
+//			if (extras != null) {
+//				mAppWidgetId = extras.getInt(
+//						AppWidgetManager.EXTRA_APPWIDGET_ID,
+//						AppWidgetManager.INVALID_APPWIDGET_ID);
+//			}
+//			if (mAppWidgetId != AppWidgetManager.INVALID_APPWIDGET_ID) {
+//				AppWidgetManager appWidgetManager = AppWidgetManager
+//						.getInstance(context);
+//				show_buttons = !show_buttons;
+//				updateVisibilityOfButtons(context, appWidgetManager,
+//						mAppWidgetId, widgetView);
+//			}
 		} else if (action.equalsIgnoreCase(ACTION_NEXT)) {
 			Log.d(LOG_TAG, "NEXT is clicked");
 
